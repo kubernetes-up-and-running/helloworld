@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  labels:
+    app: helloworld
+  name: helloworld
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: helloworld
+    spec:
+      containers:
+        - image: gcr.io/kubernetes-up-and-running/helloworld:v1
+          name: helloworld
+          ports:
+            - containerPort: 8080
+              name: http
