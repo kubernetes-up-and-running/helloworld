@@ -3,16 +3,18 @@ kind: ReplicationController
 metadata:
   labels:
     app: helloworld
-  name: helloworld
+    version: v1
+  name: helloworld-v1
 spec:
   replicas: 1
   template:
     metadata:
       labels:
         app: helloworld
+        version: v1
     spec:
       containers:
-        - image: gcr.io/kubernetes-up-and-running/helloworld:v1
+        - image: "kelseyhightower/helloworld:v1"
           name: helloworld
           ports:
             - containerPort: 8080

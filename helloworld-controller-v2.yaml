@@ -4,7 +4,7 @@ metadata:
   labels:
     app: helloworld
     version: v2
-  name: helloworld
+  name: helloworld-v2
 spec:
   replicas: 1
   template:
@@ -14,7 +14,7 @@ spec:
         version: v2
     spec:
       containers:
-        - image: gcr.io/kubernetes-up-and-running/helloworld:v2
+        - image: kelseyhightower/helloworld:v2 
           name: helloworld
           ports:
             - containerPort: 8080
